@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "CCSprite.h"
 
-@interface CanonSprite : NSObject
-
+@interface CanonSprite : NSObject{
+    CCSprite * sprite;
+}
+@property (readonly) CCSprite * sprite;
+-(void) initSprite;
 @end

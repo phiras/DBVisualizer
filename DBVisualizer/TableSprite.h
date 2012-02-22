@@ -8,9 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCSprite.h"
 
-@interface TableSprite : CCSprite {
-    
+@interface TableSprite : NSObject{
+    CCSprite *sprite;
+    int size;
+    NSString *name;
+    int tag;
 }
 
+@property (readonly) CCSprite* sprite;
+@property (readwrite) int size;
+@property (readwrite, assign) NSString *name;
+@property (readonly) int tag;
+
+-(void) initSprite;
+-(id) init:(NSString*) name:(int) size;
 @end

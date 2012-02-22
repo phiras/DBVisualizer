@@ -10,5 +10,31 @@
 
 
 @implementation TableSprite
+@synthesize sprite, size, name, tag; 
 
+-(id) init{
+    if((self=[super init])){
+        //do something
+        [self initSprite];
+        [self setName:@"na"];
+        [self setSize:1000];
+    }
+    return self;
+}
+
+-(id) init:(NSString*) _name:(int) _size{
+    if((self=[super init])){
+        //do something
+        [self initSprite];
+        self.name=_name;
+        self.size=_size;
+    }
+    return self;
+}
+
+-(void) initSprite{
+    sprite = [CCSprite spriteWithFile:@"TableSprite.png"];
+    CGSize wsize = [[CCDirector sharedDirector] winSize];
+    sprite.position =  ccp( wsize.width /2 , wsize.height/2 );
+}
 @end

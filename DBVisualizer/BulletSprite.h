@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BulletSprite : NSObject
-
+@interface BulletSprite : NSObject{
+    CCSprite * sprite;
+    int type;
+}
+@property (readonly) CCSprite * sprite;
+-(void) initSprite;
+-(id) init:(int) _type;
 @end
