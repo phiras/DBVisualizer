@@ -10,6 +10,7 @@
 #import "TableSprite.h"
 #import "CanonSprite.h"
 #import "BulletSprite.h"
+#import "SimpleAudioEngine.h"
 #import "SchemaLoader.h"
 
 int const MAX_TABLES_NUM = 5;
@@ -37,6 +38,7 @@ NSTimer *timer;
 
 -(id) init{
     if(self=[super init]){
+		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
         self.isTouchEnabled = YES;
         tables = [NSMutableDictionary dictionary];
         [tables retain];
