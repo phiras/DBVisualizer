@@ -7,6 +7,7 @@
 //
 
 #import "SchemaLoader.h"
+#import "TableSprite.h"
 
 @implementation SchemaLoader
 -(NSArray*) load{
@@ -16,6 +17,7 @@
     
     [xmlParser setDelegate:self];
 	[xmlParser parse];
+    NSLog(@"tables size %i", tables.count);
     return tables;
 }
 
@@ -41,8 +43,7 @@
 	}
 }
 
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {	
 	if(!currentElementValue)
 		currentElementValue = [[NSMutableString alloc] initWithString:string];
 	else
@@ -59,13 +60,16 @@
 	
 	if([elementName isEqualToString:@"Table"]) {
 		//[tables addObject:aTable];
-		NSMutableDictionary* dict = [NSMutableDictionary dictionary];
-        [dict setObject:name forKey:@"name"];
-        NSString *sizeStr = [[NSString alloc] initWithFormat:@"%i", size];
-        [dict setObject:sizeStr forKey:@"size"];
-        [dict setObject:columns forKey:@"columns"];
+		//NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+        //[dict setObject:name forKey:@"name"];
+        //NSString *sizeStr = [[NSString alloc] initWithFormat:@"%i", size];
+        //[dict setObject:sizeStr forKey:@"size"];
+        //[dict setObject:columns forKey:@"columns"];
         
-        [tables addObject:dict];
+        TableSprite* tbl = [[TableSprite alloc] init:name :size :columns];
+        [tables addObject:tbl];
+        
+        
         name = nil;
         size=0;
         columns=nil;
@@ -76,7 +80,7 @@
 - (void) dealloc {
     [columns release];
 	[currentElementValue release];
-    [tables release];
+    //[tables release];
 	[super dealloc];
 }
 

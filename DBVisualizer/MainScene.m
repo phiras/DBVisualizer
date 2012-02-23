@@ -10,6 +10,7 @@
 #import "TableSprite.h"
 #import "CanonSprite.h"
 #import "BulletSprite.h"
+#import "SchemaLoader.h"
 
 int const MAX_TABLES_NUM = 5;
 int const MIN_TABLE_SIZE = 24;
@@ -39,19 +40,24 @@ NSTimer *timer;
         self.isTouchEnabled = YES;
         tables = [NSMutableDictionary dictionary];
         [tables retain];
-        NSMutableArray * dummyTables = [NSMutableArray new];
-        
+        SchemaLoader* loader = [[SchemaLoader alloc] init];
+        [loader retain];
+        NSArray * dummyTables = [loader load];
+        NSLog(@"Tables number : %i ", dummyTables.count);
+        for (TableSprite* tbl in dummyTables) {
+            NSLog(@"Table name : %@ ", tbl.name);
+        }
         
         CGSize wSize = [[CCDirector sharedDirector] winSize];
         NSLog(@" width = %f, hight = %f", wSize.width, wSize.height);
         
-        [dummyTables addObject:[[TableSprite alloc] init:@"users" :1000]];
+        /*[dummyTables addObject:[[TableSprite alloc] init:@"users" :1000]];
         [dummyTables addObject:[[TableSprite alloc] init:@"categories" :500]];
         
         [dummyTables addObject:[[TableSprite alloc] init:@"orders" :2000]];
         [dummyTables addObject:[[TableSprite alloc] init:@"products" :800]];
         [dummyTables addObject:[[TableSprite alloc] init:@"log" :1500]];
-        
+        */
 
         
         cannon = [[CanonSprite alloc] init];
