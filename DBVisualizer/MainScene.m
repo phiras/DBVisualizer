@@ -59,7 +59,6 @@ NSTimer *timer;
         [dummyTables addObject:[[TableSprite alloc] init:@"orders" :2000]];
         [dummyTables addObject:[[TableSprite alloc] init:@"products" :800]];
         [dummyTables addObject:[[TableSprite alloc] init:@"log" :1500]];
-        */
 
         
         cannon = [[CanonSprite alloc] init];
