@@ -38,6 +38,7 @@ NSTimer *timer;
 
 -(id) init{
     if(self=[super init]){
+        
 		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
         self.isTouchEnabled = YES;
         tables = [NSMutableDictionary dictionary];
@@ -49,28 +50,11 @@ NSTimer *timer;
         for (TableSprite* tbl in dummyTables) {
             NSLog(@"Table name : %@ ", tbl.name);
         }
-        
+        NSLog(@"App started");
         CGSize wSize = [[CCDirector sharedDirector] winSize];
         NSLog(@" width = %f, hight = %f", wSize.width, wSize.height);
         
-        /*[dummyTables addObject:[[TableSprite alloc] init:@"users" :1000]];
-        [dummyTables addObject:[[TableSprite alloc] init:@"categories" :500]];
-        
-        [dummyTables addObject:[[TableSprite alloc] init:@"orders" :2000]];
-        [dummyTables addObject:[[TableSprite alloc] init:@"products" :800]];
-        [dummyTables addObject:[[TableSprite alloc] init:@"log" :1500]];
-
-        
         cannon = [[CanonSprite alloc] init];
-        
-        
-        
-        /*CCSprite * sprite = [CCSprite spriteWithFile:@"Bazooka.png"];
-        CGSize size = [[CCDirector sharedDirector] winSize];
-        sprite.position =  ccp( size.width-80 , size.height/2 );
-        */
-        
-        
         
         [self addChild:cannon.sprite z:3];
         
@@ -92,12 +76,13 @@ NSTimer *timer;
                                                selector: @selector(handleTimer:)
                                                userInfo: nil
                                                 repeats: YES];
+     
         
     }
     return self;
 }
 
--(void) initTables:(NSMutableArray*) tablesArray{
+-(void) initTables:(NSArray*) tablesArray{
     int numberOfTables = [tablesArray count];
     if(numberOfTables > MAX_TABLES_NUM) 
         numberOfTables = MAX_TABLES_NUM;
@@ -186,8 +171,6 @@ NSTimer *timer;
 {
     int bulletType = rand() % 3;
     float interval = (float) random()/RAND_MAX;
-    
-    
     
     
     NSLog(@"Timer fired %i, %f", bulletType, interval);

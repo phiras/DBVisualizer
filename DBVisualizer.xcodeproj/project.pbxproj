@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6146C67914F69552007B5598 /* Schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6146C67814F69552007B5598 /* Schema.xml */; };
 		616355F214DAC4B1005B9318 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616355F114DAC4B1005B9318 /* QuartzCore.framework */; };
 		616355F414DAC4B1005B9318 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616355F314DAC4B1005B9318 /* OpenGLES.framework */; };
 		616355F614DAC4B1005B9318 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616355F514DAC4B1005B9318 /* OpenAL.framework */; };
@@ -136,10 +137,10 @@
 		617491D614F08A3B00882F96 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 617491D514F08A3B00882F96 /* fire.png */; };
 		6195EF5D14F522D200119697 /* SchemaLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6195EF5C14F522D200119697 /* SchemaLoader.m */; };
 		67A9A3CB14F6641D0061D431 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 67A9A3CA14F6641D0061D431 /* background-music-aac.caf */; };
-		6195EF7614F68DC900119697 /* Schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6195EF7514F68DC900119697 /* Schema.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6146C67814F69552007B5598 /* Schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Schema.xml; sourceTree = "<group>"; };
 		616355ED14DAC4B1005B9318 /* DBVisualizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DBVisualizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		616355F114DAC4B1005B9318 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		616355F314DAC4B1005B9318 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -475,6 +476,7 @@
 				6163578C14E2BFC8005B9318 /* Shoot.png */,
 				6163578814E2B356005B9318 /* BulletSprite16Red.png */,
 				6163578414E2AE84005B9318 /* BulletSprite16.png */,
+				6146C67814F69552007B5598 /* Schema.xml */,
 				6163578214E2A59A005B9318 /* BulletSprite.png */,
 				6163577A14E14C6C005B9318 /* Bazooka.png */,
 				6163560314DAC4B1005B9318 /* Default.png */,
@@ -894,6 +896,7 @@
 				6163578D14E2BFC8005B9318 /* Shoot.png in Resources */,
 				617491D614F08A3B00882F96 /* fire.png in Resources */,
 				67A9A3CB14F6641D0061D431 /* background-music-aac.caf in Resources */,
+				6146C67914F69552007B5598 /* Schema.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
