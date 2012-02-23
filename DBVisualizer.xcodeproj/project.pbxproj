@@ -135,6 +135,7 @@
 		6163578D14E2BFC8005B9318 /* Shoot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6163578C14E2BFC8005B9318 /* Shoot.png */; };
 		617491D614F08A3B00882F96 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 617491D514F08A3B00882F96 /* fire.png */; };
 		6195EF5D14F522D200119697 /* SchemaLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6195EF5C14F522D200119697 /* SchemaLoader.m */; };
+		67A9A3C614F659260061D431 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 67A9A3C514F659260061D431 /* background-music-aac.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,6 +391,7 @@
 		617491D514F08A3B00882F96 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		6195EF5B14F522D200119697 /* SchemaLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemaLoader.h; sourceTree = "<group>"; };
 		6195EF5C14F522D200119697 /* SchemaLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemaLoader.m; sourceTree = "<group>"; };
+		67A9A3C514F659260061D431 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +457,7 @@
 				6163575C14DAC4B4005B9318 /* GameConfig.h */,
 				6163576214DAC5E4005B9318 /* MainScene.h */,
 				6163576314DAC5E4005B9318 /* MainScene.m */,
+				67A9A3C514F659260061D431 /* background-music-aac.caf */,
 				6163560214DAC4B1005B9318 /* Resources */,
 				6163561614DAC4B1005B9318 /* libs */,
 				6163574F14DAC4B4005B9318 /* Supporting Files */,
@@ -889,6 +892,7 @@
 				6163578B14E2B356005B9318 /* BulletSprite16Red.png in Resources */,
 				6163578D14E2BFC8005B9318 /* Shoot.png in Resources */,
 				617491D614F08A3B00882F96 /* fire.png in Resources */,
+				67A9A3C614F659260061D431 /* background-music-aac.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
