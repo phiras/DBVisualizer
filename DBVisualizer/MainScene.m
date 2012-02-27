@@ -68,6 +68,11 @@ NSTimer *timer;
         [self addChild:shootBTNSprite z:0 tag:3];
         float shootBTNWidth = [shootBTNSprite texture].contentSize.width;
         shootBTNSprite.position = CGPointMake(size.width-60,shootBTNWidth+6);
+		
+		//Operations Info
+		CCSprite * infoSprite = [CCSprite spriteWithFile:@"OperationsInfo.png"];
+		infoSprite.position   =  ccp(size.width/2,size.height/20);
+        [self addChild:infoSprite z:0 tag:4];
         
         
         

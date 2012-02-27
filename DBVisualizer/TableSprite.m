@@ -10,23 +10,25 @@
 
 
 @implementation TableSprite
-@synthesize sprite, size, name, tag, columns; 
+@synthesize sprite, size, name, index, tag, columns; 
 
 -(id) init{
     if((self=[super init])){
         //do something
         [self initSprite];
         [self setName:@"na"];
+		[self setIndex:@"na"];
         [self setSize:1000];
     }
     return self;
 }
 
--(id) init:(NSString*) _name:(int) _size: (NSArray*) _columns{
+-(id) init:(NSString*) _name:(int) _size: (NSArray*) _columns: (NSString*) _index{
     if((self=[super init])){
         //do something
         [self initSprite];
         self.name=_name;
+		self.index= _index;
         self.size=_size;
         self.columns = _columns;
     }

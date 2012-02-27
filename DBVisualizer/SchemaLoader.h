@@ -11,6 +11,7 @@
 @interface SchemaLoader : NSObject  <NSXMLParserDelegate>{
     NSMutableString *currentElementValue;
     NSString* name;
+	NSString* index;
     int size;
     NSMutableArray *columns;
     NSMutableArray *tables;

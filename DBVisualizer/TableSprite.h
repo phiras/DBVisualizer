@@ -14,6 +14,7 @@
     CCSprite *sprite;
     int size;
     NSString *name;
+	NSString *index;
     NSArray * columns;
     int tag;
 }
@@ -21,9 +22,10 @@
 @property (readonly) CCSprite* sprite;
 @property (readwrite) int size;
 @property (readwrite, assign) NSString *name;
+@property (readwrite, assign) NSString *index;
 @property (readwrite, assign) NSArray *columns;
 @property (readonly) int tag;
 
 -(void) initSprite;
--(id) init:(NSString*) name:(int) size: (NSArray*) columns;
+-(id) init:(NSString*) name:(int) size: (NSArray*) columns: (NSString*) index;
 @end

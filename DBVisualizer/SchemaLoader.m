@@ -38,6 +38,7 @@
 	}
 	else if([elementName isEqualToString:@"Table"]) {
         name = [attributeDict objectForKey:@"name"];
+		index = [attributeDict objectForKey:@"index"];
         size = [(NSString*)[attributeDict objectForKey:@"size"] integerValue];
         columns = [NSMutableArray array];
 	}
@@ -66,11 +67,12 @@
         //[dict setObject:sizeStr forKey:@"size"];
         //[dict setObject:columns forKey:@"columns"];
         
-        TableSprite* tbl = [[TableSprite alloc] init:name :size :columns];
+        TableSprite* tbl = [[TableSprite alloc] init:name :size :columns :index];
         [tables addObject:tbl];
         
         
         name = nil;
+		index = nil;
         size=0;
         columns=nil;
 	}
