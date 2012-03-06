@@ -1,0 +1,10 @@
+root[root]|[127.0.0.1]|1328981419|SELECT|0.0020|0.0010|0|0|SELECT id FROM customer|1328981419|customer;
+root[root]|[127.0.0.1]|1328981419|INSERT|0.0030|0.0010|0|0|INSERT INTO customer (gsm_no) VALUES(176096450)|0|customer;
+root[root]|[127.0.0.1]|1328981419|INSERT|0.0010|0.0|0|0|INSERT INTO customer (gsm_no) VALUES(176791349)|0|customer;
+root[root]|[127.0.0.1]|1328981419|INSERT|0.0020|0.0|0|0|INSERT INTO customer (gsm_no) VALUES(176163249)|0|customer;
+root[root]|[127.0.0.1]|1328981419|INSERT|0.0010|0.0|0|0|INSERT INTO customer (gsm_no) VALUES(176342089)|0|customer;
+root[root]|[127.0.0.1]|1328981419|INSERT|0.0010|0.0|0|0|INSERT INTO customer (gsm_no) VALUES(176540413)|0|customer;
+root[root]|[127.0.0.1]|1328981420|update|0.036002|0.0|0|1|update customer set gsm_no =176461490 where id ='5'|1|customer;
+root[root]|[127.0.0.1]|1328981421|delete|0.0020|0.0010|0|0|delete from sms where customer_id =4|1|sms;
+root[root]|[127.0.0.1]|1328981421|delete|0.076004|0.065003|0|0|delete from calls where customer_id =4|0|calls;
+root[root]|[127.0.0.1]|1328981421|INSERT|0.070004|0.0|0|0|INSERT INTO calls (customer_id, hour, minute, duration) VALUES(4,10,4,26)|0|calls;

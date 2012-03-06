@@ -12,6 +12,7 @@
 #import "BulletSprite.h"
 #import "SimpleAudioEngine.h"
 #import "SchemaLoader.h"
+#import "CSVEventsLoader.h"
 
 int const MAX_TABLES_NUM = 5;
 int const MIN_TABLE_SIZE = 24;
@@ -42,6 +43,16 @@ CCScene *s;
 -(id) init{
     if(self=[super init]){
         self.isTouchEnabled = YES;
+        
+        
+        NSMutableArray * events = [CSVEventsLoader load];
+        /*for (NSMutableDictionary *event in events) {
+            NSLog(@"User: %@", [event objectForKey:@"user"]);
+            NSLog(@"Database Server: %@", [event objectForKey:@"operation"]);
+            NSLog(@"==============================");
+        }*/
+        
+        
         // load tables
         tables = [NSMutableDictionary dictionary];
         [tables retain];
