@@ -221,7 +221,7 @@ NSTimer *timer;
     
     CGPoint  point = CGPointMake(tblSprite.sprite.position.x ,tblSprite.sprite.position.y);
     
-    CCMoveTo * move = [CCMoveTo actionWithDuration:2.5 position:point];
+    CCMoveTo * move = [CCMoveTo actionWithDuration:0.3 position:point];
     CCSequence *seq = [CCSequence actions:move, nil];
     [bullet.sprite runAction:seq];
 
@@ -229,7 +229,7 @@ NSTimer *timer;
 
     
     
-    NSTimer * tableTimer = [NSTimer scheduledTimerWithTimeInterval: 2.50
+    NSTimer * tableTimer = [NSTimer scheduledTimerWithTimeInterval: 0.30
                                              target: self
                                             selector: @selector(shakeTable:)
                                            userInfo: tblSprite
