@@ -28,6 +28,10 @@ int maxRowNumbers = 2000;
 int max_table_siz_px;
 int min_table_siz_px;
 NSTimer *timer;
+NSMutableArray * events;
+int eventIndex;
+int lastTime;
+NSMutableDictionary* event;
 
 CCScene *s; 
 
@@ -45,13 +49,12 @@ CCScene *s;
         self.isTouchEnabled = YES;
         
         
-        NSMutableArray * events = [CSVEventsLoader load];
-        /*for (NSMutableDictionary *event in events) {
-            NSLog(@"User: %@", [event objectForKey:@"user"]);
-            NSLog(@"Database Server: %@", [event objectForKey:@"operation"]);
-            NSLog(@"==============================");
-        }*/
-        
+        events = [CSVEventsLoader load];
+        [events retain];
+        [event retain];
+        eventIndex=0;
+        lastTime=0;
+        event = [self nextEvent];
         
         // load tables
         tables = [NSMutableDictionary dictionary];
@@ -165,37 +168,54 @@ CCScene *s;
 }
 
 
+-(NSMutableDictionary*) nextEvent{
+    NSLog(@"events count = %i, index = %i", events.count, eventIndex);
+    if(++eventIndex >= events.count){
+        return nil;
+    }
+    return [events objectAtIndex:eventIndex];
+}
+
 -(void) handleTimer:(NSTimer *) timer
 {
-    int bulletType = rand() % 3;
-    float interval = (float) random()/RAND_MAX;
-    NSLog(@"Timer fired %i, %f", bulletType, interval);
-    [timer invalidate];
-    timer = nil;
-    timer = [NSTimer scheduledTimerWithTimeInterval: interval
-                                             target: self
-                                           selector: @selector(handleTimer:)
-                                           userInfo: nil
-                                            repeats: YES];
+    if(event == nil){
+        NSLog(@"nil event");
+        return;
+    }
+    NSLog(@" new event : %@", event);
+    NSLog(@"time diff : %@", [event objectForKey:@"timeDiff"]);
+    int bulletType=0;
+    if([[event objectForKey:@"operation"] isEqualToString:@"INSERT"]) bulletType = 0;
+    if([[event objectForKey:@"operation"] isEqualToString:@"update"]) bulletType = 1;
+    if([[event objectForKey:@"operation"] isEqualToString:@"delete"]) bulletType = 2;
+    if([[event objectForKey:@"operation"] isEqualToString:@"SELECT"]) bulletType = 0; // TODO : fix
     
-    
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    //BulletSprite * bullet = [[BulletSprite alloc] init:bulletType];
-    //[self addChild:bullet.sprite ];
 
-    NSArray *keys = [tables allKeys];
-    NSString * tableName = [keys objectAtIndex:(rand()%keys.count)];
+
     
-    TableSprite * tblSprite = [tables objectForKey:tableName];
+    TableSprite * tblSprite = [tables objectForKey:[event objectForKey:@"meta"]];
 
     [cannon shoot:bulletType:tblSprite];
 
     
-    NSTimer * tableTimer = [NSTimer scheduledTimerWithTimeInterval: 0.30
+   /* NSTimer * tableTimer = [NSTimer scheduledTimerWithTimeInterval: 0.30
                                              target: self
                                             selector: @selector(shakeTable:)
                                            userInfo: tblSprite
                                             repeats: NO];
+    */
+
+    
+    event = [self nextEvent];
+    int timeDiff = [[event objectForKey:@"timeDiff"] intValue];
+    
+    [timer invalidate];
+    timer = nil;
+    timer = [NSTimer scheduledTimerWithTimeInterval: 0.30+(20*timeDiff)/10
+                                             target: self
+                                           selector: @selector(handleTimer:)
+                                           userInfo: nil
+                                            repeats: YES];
 }
 
 -(void) shakeTable:(NSTimer *) timer{

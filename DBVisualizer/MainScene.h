@@ -18,4 +18,5 @@ extern int const MAX_TABLES_NUM;
 -(void) initTables:(NSArray*) tablesArray;
 -(void) drawTables;
 -(void) handleTimer:(NSTimer *) timer;
+-(NSMutableDictionary*) nextEvent;
 @end

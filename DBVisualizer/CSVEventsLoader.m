@@ -13,9 +13,10 @@
 
 +(NSMutableArray*) load{
     NSMutableArray * events;
+
     events =[[NSMutableArray alloc] init];
     NSError  **outError = nil;
-	NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"dummy_events" ofType:@"csv"]; 
+	NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"dummy_events2" ofType:@"csv"]; 
 	NSString *text = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:outError];
 	if (!text) {
 		NSLog(@"Error reading file.");
@@ -48,6 +49,7 @@
         [dict setObject:rowsExamined forKey:@"rowsExamined"];
         [dict setObject:query forKey:@"query"];
         [dict setObject:queryMeta forKey:@"meta"];
+        [dict setObject:timeDiff forKey:@"timeDiff"];
         
 		[events addObject:dict];
     }
