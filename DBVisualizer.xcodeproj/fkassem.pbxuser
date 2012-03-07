@@ -34,10 +34,11 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 352043941;
-			PBXWorkspaceStateSaveDate = 352043941;
+			PBXPerProjectTemplateStateSaveDate = 352819222;
+			PBXWorkspaceStateSaveDate = 352819222;
 		};
 		perUserProjectItems = {
+			679C631815079818001F45AD /* PBXTextBookmark */ = 679C631815079818001F45AD /* PBXTextBookmark */;
 			67A9A36914F6530A0061D431 = 67A9A36914F6530A0061D431 /* PBXTextBookmark */;
 			67A9A36A14F6530A0061D431 = 67A9A36A14F6530A0061D431 /* PBXTextBookmark */;
 			67A9A36B14F6530A0061D431 = 67A9A36B14F6530A0061D431 /* PBXTextBookmark */;
@@ -79,9 +80,9 @@
 	};
 	6163576314DAC5E4005B9318 /* MainScene.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1206, 3484}}";
-			sepNavSelRange = "{443, 0}";
-			sepNavVisRange = "{163, 1250}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 3341}}";
+			sepNavSelRange = "{579, 0}";
+			sepNavVisRange = "{1498, 1054}";
 			sepNavWindowFrame = "{{15, 50}, {1265, 725}}";
 		};
 	};
@@ -140,6 +141,23 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1011, 1092}}";
 			sepNavSelRange = "{537, 0}";
 			sepNavVisRange = "{0, 805}";
+		};
+	};
+	679C631815079818001F45AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 67C951B114FBC3A100396754 /* MainScene.m */;
+		name = "MainScene.m: 87";
+		rLen = 199;
+		rLoc = 2326;
+		rType = 0;
+		vrLen = 1100;
+		vrLoc = 1739;
+	};
+	679C6321150798AD001F45AD /* StatisticsSprite.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 1001}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{393, 1045}";
 		};
 	};
 	67A9A32314F646450061D431 /* DBVisualizer */ = {
@@ -325,9 +343,9 @@
 		path = "/Users/fkassem/Documents/Projects/OLD DBVisualizer/DBVisualizer/MainScene.m";
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 3562}}";
-			sepNavSelRange = "{1963, 0}";
-			sepNavVisRange = "{1809, 1072}";
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 3172}}";
+			sepNavSelRange = "{2111, 0}";
+			sepNavVisRange = "{1739, 1100}";
 		};
 	};
 }

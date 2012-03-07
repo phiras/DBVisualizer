@@ -10,6 +10,7 @@
 #import "TableSprite.h"
 #import "CanonSprite.h"
 #import "BulletSprite.h"
+#import "StatisticsSprite.h"
 #import "SimpleAudioEngine.h"
 #import "SchemaLoader.h"
 #import "CSVEventsLoader.h"
@@ -23,6 +24,7 @@ int const MIN_TABLE_SIZE = 24;
 NSMutableDictionary * tables;
 CCSprite *shootBTNSprite;
 CanonSprite * cannon;
+StatisticsSprite *statistics;
 int minRowNumbers = 800;
 int maxRowNumbers = 2000;
 int max_table_siz_px;
@@ -78,8 +80,16 @@ CCScene *s;
         CGSize size = [[CCDirector sharedDirector] winSize];
 		//Operations Info
 		CCSprite * infoSprite = [CCSprite spriteWithFile:@"OperationsInfo.png"];
-		infoSprite.position   =  ccp(size.width/2,size.height/20);
+		infoSprite.position   =  ccp((size.width/4)*3-15,15);
         [self addChild:infoSprite z:0 tag:4];
+		
+		// add statistics info
+		statistics = [[StatisticsSprite alloc] init];
+        [statistics retain];
+        [self addChild:statistics.selectSprite z:0];
+		[self addChild:statistics.insertSprite z:0];
+		[self addChild:statistics.updateSprite z:0];
+		[self addChild:statistics.deleteSprite z:0];
         
         // setup timer
         timer = [NSTimer scheduledTimerWithTimeInterval: 0.5

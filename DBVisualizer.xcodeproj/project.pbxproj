@@ -139,6 +139,11 @@
 		61DC727F1506664D00502B52 /* dummy_events.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61DC727E1506664D00502B52 /* dummy_events.csv */; };
 		61DC72831506668700502B52 /* CSVEventsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DC72821506668700502B52 /* CSVEventsLoader.m */; };
 		61DC728515077E1D00502B52 /* dummy_events2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 61DC728415077E1D00502B52 /* dummy_events2.csv */; };
+		679C6322150798AD001F45AD /* StatisticsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 679C6321150798AD001F45AD /* StatisticsSprite.m */; };
+		679C6324150798DB001F45AD /* BlueBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 679C6323150798DB001F45AD /* BlueBar.png */; };
+		679C6326150798F5001F45AD /* RedBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 679C6325150798F5001F45AD /* RedBar.png */; };
+		679C63281507991A001F45AD /* GreenBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 679C63271507991A001F45AD /* GreenBar.png */; };
+		679C632A15079949001F45AD /* WhiteBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 679C632915079949001F45AD /* WhiteBar.png */; };
 		67A9A3CB14F6641D0061D431 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 67A9A3CA14F6641D0061D431 /* background-music-aac.caf */; };
 		67C951AC14FBC36E00396754 /* OperationsInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C951AB14FBC36E00396754 /* OperationsInfo.png */; };
 /* End PBXBuildFile section */
@@ -401,6 +406,12 @@
 		61DC72811506668700502B52 /* CSVEventsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVEventsLoader.h; sourceTree = "<group>"; };
 		61DC72821506668700502B52 /* CSVEventsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVEventsLoader.m; sourceTree = "<group>"; };
 		61DC728415077E1D00502B52 /* dummy_events2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dummy_events2.csv; sourceTree = "<group>"; };
+		679C63201507988D001F45AD /* StatisticsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticsSprite.h; path = "../OLD DBVisualizer/DBVisualizer/StatisticsSprite.h"; sourceTree = SOURCE_ROOT; };
+		679C6321150798AD001F45AD /* StatisticsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticsSprite.m; path = "../OLD DBVisualizer/DBVisualizer/StatisticsSprite.m"; sourceTree = SOURCE_ROOT; };
+		679C6323150798DB001F45AD /* BlueBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlueBar.png; path = "../OLD DBVisualizer/DBVisualizer/BlueBar.png"; sourceTree = SOURCE_ROOT; };
+		679C6325150798F5001F45AD /* RedBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RedBar.png; path = "../OLD DBVisualizer/DBVisualizer/RedBar.png"; sourceTree = SOURCE_ROOT; };
+		679C63271507991A001F45AD /* GreenBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GreenBar.png; path = "../OLD DBVisualizer/DBVisualizer/GreenBar.png"; sourceTree = SOURCE_ROOT; };
+		679C632915079949001F45AD /* WhiteBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WhiteBar.png; path = "../OLD DBVisualizer/DBVisualizer/WhiteBar.png"; sourceTree = SOURCE_ROOT; };
 		67A9A3CA14F6641D0061D431 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
 		67C951AB14FBC36E00396754 /* OperationsInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OperationsInfo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -478,6 +489,10 @@
 		6163560214DAC4B1005B9318 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				679C632915079949001F45AD /* WhiteBar.png */,
+				679C63271507991A001F45AD /* GreenBar.png */,
+				679C6325150798F5001F45AD /* RedBar.png */,
+				679C6323150798DB001F45AD /* BlueBar.png */,
 				61DC728415077E1D00502B52 /* dummy_events2.csv */,
 				61DC727E1506664D00502B52 /* dummy_events.csv */,
 				67C951AB14FBC36E00396754 /* OperationsInfo.png */,
@@ -820,6 +835,8 @@
 		617491DC14F1B95D00882F96 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				679C6321150798AD001F45AD /* StatisticsSprite.m */,
+				679C63201507988D001F45AD /* StatisticsSprite.h */,
 				6163576B14DACA83005B9318 /* TableSprite.h */,
 				6163576C14DACA83005B9318 /* TableSprite.m */,
 				6163577C14E14CD7005B9318 /* CanonSprite.h */,
@@ -914,6 +931,10 @@
 				67C951AC14FBC36E00396754 /* OperationsInfo.png in Resources */,
 				61DC727F1506664D00502B52 /* dummy_events.csv in Resources */,
 				61DC728515077E1D00502B52 /* dummy_events2.csv in Resources */,
+				679C6324150798DB001F45AD /* BlueBar.png in Resources */,
+				679C6326150798F5001F45AD /* RedBar.png in Resources */,
+				679C63281507991A001F45AD /* GreenBar.png in Resources */,
+				679C632A15079949001F45AD /* WhiteBar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,6 +1048,7 @@
 				6163578114E2A3A0005B9318 /* BulletSprite.m in Sources */,
 				6195EF5D14F522D200119697 /* SchemaLoader.m in Sources */,
 				61DC72831506668700502B52 /* CSVEventsLoader.m in Sources */,
+				679C6322150798AD001F45AD /* StatisticsSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
