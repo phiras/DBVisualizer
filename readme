@@ -1,1 +1,15 @@
-Hi
+DBMS Access Log Visualization
+Database Management Systems provides logs about how/what queries are
+requested by a client or more than one client. We aim to visualize these
+information found in access log files in a cool way to make it easier to
+read what is happening on the server side to System admins or any other
+party who holds the interest to understand what’s going on on the DBMS
+server. We will chose MYSQL as our DBMS however the system will be developed
+in a way that allow further support for other different Database systems.
+And we are looking to adapt this software to work with SAB’s HANA DBMS as a
+final goal.
+The result of our project will be an iPad App which provides a simple and
+entreating overview about database load/status. The audience of this
+application will be any party who is interested in database load/status
+information. for example a system administrator can use this Application to
+show his manager how the DBMS is loaded to get more resources.Hi
