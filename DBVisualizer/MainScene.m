@@ -125,10 +125,14 @@ CCScene *s;
         TableSprite * tbSprite = [tables objectForKey:tblName];
         NSLog(@"Working on table %@, %i", tblName, tables.count);
         [self addChild:tbSprite.sprite z:1 tag:++i];
-        tbSprite.sprite.position = CGPointMake(max_table_siz_px/2,10+i*(max_table_siz_px/2)+(i-1)*max_table_siz_px/2);
+        tbSprite.sprite.position = CGPointMake((max_table_siz_px/2)+100,10+i*(max_table_siz_px/2)+(i-1)*max_table_siz_px/2);
         float scaleRate = (((float)tbSprite.size)*1/maxRowNumbers);
         CCScaleBy *scale = [CCScaleBy actionWithDuration:0.4 scale:generalScaleRate*scaleRate];
         [tbSprite.sprite runAction:scale];
+		// view the table name
+		CCLabelTTF *label = [CCLabelTTF labelWithString:tblName fontName:@"Verdana" fontSize:20];
+		label.position =  ccp( 50 , 10+i*(max_table_siz_px/2)+(i-1)*max_table_siz_px/2);
+		[self addChild:label];
     }
 }
 
