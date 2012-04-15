@@ -35,6 +35,8 @@ int eventIndex;
 int lastTime;
 NSMutableDictionary* event;
 
+int insertCount =1, updateCount=1, deleteCount=1, selectCount=1;
+
 CCScene *s; 
 
 +(CCScene *) scene{
@@ -74,7 +76,7 @@ CCScene *s;
         [self drawTables];
         
         // Play music theme
-		//[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
+		[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
         
         // add info area
         CGSize size = [[CCDirector sharedDirector] winSize];
@@ -90,6 +92,7 @@ CCScene *s;
 		[self addChild:statistics.insertSprite z:0];
 		[self addChild:statistics.updateSprite z:0];
 		[self addChild:statistics.deleteSprite z:0];
+        [statistics updateScales:selectCount :insertCount :updateCount :deleteCount];
         
         // setup timer
         timer = [NSTimer scheduledTimerWithTimeInterval: 0.5
@@ -199,13 +202,13 @@ CCScene *s;
     NSLog(@" new event : %@", event);
     NSLog(@"time diff : %@", [event objectForKey:@"timeDiff"]);
     int bulletType=0;
-    if([[event objectForKey:@"operation"] isEqualToString:@"INSERT"]) bulletType = 0;
-    if([[event objectForKey:@"operation"] isEqualToString:@"update"]) bulletType = 1;
-    if([[event objectForKey:@"operation"] isEqualToString:@"delete"]) bulletType = 2;
-    if([[event objectForKey:@"operation"] isEqualToString:@"SELECT"]) bulletType = 0; // TODO : fix
+    if([[event objectForKey:@"operation"] isEqualToString:@"INSERT"]) {bulletType = 0; insertCount++;}
+    if([[event objectForKey:@"operation"] isEqualToString:@"update"]) {bulletType = 1; updateCount++;}
+    if([[event objectForKey:@"operation"] isEqualToString:@"delete"]) {bulletType = 2; deleteCount++;}
+    if([[event objectForKey:@"operation"] isEqualToString:@"SELECT"]) {bulletType = 0; selectCount++;} // TODO : fix
     
 
-
+    [statistics updateScales:selectCount :insertCount :updateCount :deleteCount];
     
     TableSprite * tblSprite = [tables objectForKey:[event objectForKey:@"meta"]];
 
@@ -222,6 +225,8 @@ CCScene *s;
     
     event = [self nextEvent];
     int timeDiff = [[event objectForKey:@"timeDiff"] intValue];
+    
+    
     
     [timer invalidate];
     timer = nil;
